@@ -2,20 +2,22 @@
 public class FizzBuzz {
 	public static String fizzBuzz(int numero)
 	{
+		String fizz = "Fizz";
+		String buzz = "Buzz";
 		String numeroStr = numero + "";
 		if (numero % 3 == 0 && numero % 5 == 0)
 		{
-			return "FizzBuzz";                    
+			return fizz+buzz;                    
 		}
 		else 
 			if(numero % 3 == 0)
 			{
-				return "Fizz";
+				return fizz;
 			}
 			else 
 				if(numero % 5 == 0)
 				{
-					return "Buzz";
+					return buzz;
 				}
 				else
 					return numeroStr;
