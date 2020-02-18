@@ -9,17 +9,14 @@ public class FizzBuzz {
 		{
 			return fizz+buzz;                    
 		}
-		else 
-			if(numero % 3 == 0)
-			{
-				return fizz;
-			}
-			else 
-				if(numero % 5 == 0)
-				{
-					return buzz;
-				}
-				else
-					return numeroStr;
+		if(numero % 3 == 0)
+		{
+			return fizz;
+		}
+		if(numero % 5 == 0)
+		{
+			return buzz;
+		}
+		return numeroStr;
     }	
 }
