@@ -1,0 +1,24 @@
+Paso 1
+
+Extraer metodos
+
+normal
+normal1
+normal2
+normal3
+Getliteral
+deuce
+advantage
+win
+
+Paso 2
+
+eliminar codigo repetido de normal y getLiteral
+
+Paso 3
+
+ordenar funciones
+
+Paso 4
+
+hacer mas entendibles las condicionales
