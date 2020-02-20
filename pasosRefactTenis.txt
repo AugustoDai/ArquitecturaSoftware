@@ -21,4 +21,12 @@ ordenar funciones
 
 Paso 4
 
+extraer funciones del getScore para hacerlos mas entendibles
+
+paso 5
+
 hacer mas entendibles las condicionales
+
+paso 6
+
+numeros magicos
