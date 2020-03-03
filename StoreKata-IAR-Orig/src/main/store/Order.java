@@ -57,18 +57,18 @@ public class Order {
 		for (OrderItem item : items) {
 			float totalItem=0;
 			float itemAmount = item.getProduct().getUnitPrice() * item.getQuantity();
-			if (item.getProduct().getCategory() == ProductCategory.Accessories) {
+			if (isAccesorie(item)) {
 				float booksDiscount = 0;
 				if (itemAmount >= 100) {
 					booksDiscount = itemAmount * 10 / 100;
 				}
 				totalItem = itemAmount - booksDiscount;
 			}
-			if (item.getProduct().getCategory() == ProductCategory.Bikes) {
+			if (isABike(item)) {
 				// 20% discount for Bikes
 				totalItem = itemAmount - itemAmount * 20 / 100;
 			}
-			if (item.getProduct().getCategory() == ProductCategory.Clothing) {
+			if (isAClothing(item)) {
 				float cloathingDiscount = 0;
 				if (item.getQuantity() > 2) {
 					cloathingDiscount = item.getProduct().getUnitPrice();
@@ -85,5 +85,17 @@ public class Order {
 
 		// total=totalItemst + tax + 15 shipping
 		return totalItems + totalItems * 5 / 100 + 15;
+	}
+
+	private boolean isAClothing(OrderItem item) {
+		return item.getProduct().getCategory() == ProductCategory.Clothing;
+	}
+
+	private boolean isABike(OrderItem item) {
+		return item.getProduct().getCategory() == ProductCategory.Bikes;
+	}
+
+	private boolean isAccesorie(OrderItem item) {
+		return item.getProduct().getCategory() == ProductCategory.Accessories;
 	}
 }
