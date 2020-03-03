@@ -52,7 +52,7 @@ public class Order {
 		return items;
 	}
 
-	public float total() {
+	public float getOrderTotal() {
 		float totalItems = 0;
 		for (OrderItem item : items) {
 			float totalItem=0;
