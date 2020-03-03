@@ -68,7 +68,7 @@ public class Order {
 				// 20% discount for Bikes
 				totalItem = itemAmount - itemAmount * 20 / 100;
 			}
-			if (item.getProduct().getCategory() == ProductCategory.Cloathing) {
+			if (item.getProduct().getCategory() == ProductCategory.Clothing) {
 				float cloathingDiscount = 0;
 				if (item.getQuantity() > 2) {
 					cloathingDiscount = item.getProduct().getUnitPrice();
