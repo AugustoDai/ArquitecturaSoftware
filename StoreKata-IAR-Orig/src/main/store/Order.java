@@ -64,7 +64,7 @@ public class Order {
 			}
 			if (isABike(item)) {
 				// 20% discount for Bikes
-				totalItem = itemAmount - itemAmount * 20 / 100;
+				totalItem = itemAmount - getDiscount(itemAmount,20);
 			}
 			if (isAClothing(item)) {
 				float cloathingDiscount = 0;
