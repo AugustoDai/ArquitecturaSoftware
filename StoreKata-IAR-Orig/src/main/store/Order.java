@@ -54,6 +54,7 @@ public class Order {
 
 	public float getOrderTotal() {
 		float totalItems = 0;
+		int shipping = 15;
 		for (OrderItem item : items) {
 			float totalItem = 0;
 			float itemAmount = item.getProduct().getUnitPrice() * item.getQuantity();
@@ -67,22 +68,21 @@ public class Order {
 				totalItem = itemAmount - getDiscount(itemAmount,20);
 			}
 			if (isAClothing(item)) {
-				float cloathingDiscount = 0;
 				if (item.getQuantity() > 2) {
-					cloathingDiscount = item.getProduct().getUnitPrice();
+					totalItem = itemAmount - item.getProduct().getUnitPrice();
 				}
-				totalItem = itemAmount - cloathingDiscount;
 			}
 			totalItems += totalItem;
 		}
-
+		
+		totalItems = totalItems + getDiscount(totalItems,5);
 		if (this.deliveryCountry == "USA"){
 			// total=totalItems + tax + 0 shipping
-			return totalItems + totalItems * 5 / 100;
+			shipping = 0;
 		}
 
 		// total=totalItemst + tax + 15 shipping
-		return totalItems + totalItems * 5 / 100 + 15;
+		return totalItems + shipping;
 	}
 	private float getDiscount(float amount, int percentage) {
 		return amount * percentage / 100;
