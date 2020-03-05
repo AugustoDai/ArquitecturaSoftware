@@ -21,11 +21,10 @@ public class OrderItem {
 		return quantity;
 	}
 	float calculateTotalForItem() {
-		float itemAmount = calculateTotalAmount();
         float discount=0;
         DiscountCalculator discountCalculator = createDiscountCalculator();
-        discount = discountCalculator.calculateDiscount(itemAmount, this);
-        return itemAmount - discount;
+        discount = discountCalculator.calculateDiscount(this);
+        return calculateTotalAmount() - discount;
 	}
 	float calculateTotalAmount() {
 		return getProduct().getUnitPrice() * getQuantity();
