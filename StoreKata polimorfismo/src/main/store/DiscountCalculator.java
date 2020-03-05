@@ -1,5 +1,5 @@
 package store;
 
 public interface DiscountCalculator {
-	public float calculateDiscount();
+	public float calculateDiscount(float itemAmount,OrderItem orderItem);
 }
